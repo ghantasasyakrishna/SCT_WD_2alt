@@ -4,44 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Stopwatch</title>
+    <title>ChronoX Stopwatch</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="app">
 
-        <div class="stopwatch-card">
+        <!-- Top Section -->
+        <header>
+            <div class="brand">
+                <div class="brand-icon">◉</div>
 
-            <h1>STOPWATCH</h1>
-
-            <div class="time-display">
-                <span id="hours">00</span>
-                <span>:</span>
-                <span id="minutes">00</span>
-                <span>:</span>
-                <span id="seconds">00</span>
-                <span class="milliseconds">.<span id="milliseconds">00</span></span>
+                <div>
+                    <h1>ChronoX</h1>
+                    <p>PRECISION TIMER</p>
+                </div>
             </div>
 
-            <div class="buttons">
-                <button id="startBtn" class="start">Start</button>
-                <button id="pauseBtn" class="pause">Pause</button>
-                <button id="lapBtn" class="lap">Lap</button>
-                <button id="resetBtn" class="reset">Reset</button>
+            <div class="status">
+                <span class="status-dot"></span>
+                READY
             </div>
+        </header>
 
-            <div class="laps-container">
-                <h2>Lap Times</h2>
 
-                <ul id="lapList"></ul>
-            </div>
+        <!-- Main Stopwatch -->
+        <main>
 
-        </div>
+            <section class="timer-section">
+
+                <div class="timer-circle">
+
+                    <div class="circle-inner">
+
+                        <p class="timer-label">ELAPSED TIME</p>
+
+                        <div class="time">
+                            <span id="minutes">00</span>
+                            <small>:</small>
+                            <span id="seconds">00</span>
+                        </div>
+
+                        <div class="milliseconds">
+                            <span id="milliseconds">00</span> ms
+                        </div>
+
+                        <div class="timer-state" id="timerState">
+                            READY TO START
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="controls">
+
+                    <button id="resetBtn" class="control-btn reset-btn">
+                        ↻
+                        <span>Reset</span>
+                    </button>
+
+                    <button id="startBtn" class="start-btn">
+                        <span id="startIcon">▶</span>
+                        <span id="startText">Start</span>
+                    </button>
+
+                    <button id="lapBtn" class="control-btn lap-btn">
+                        ◷
+                        <span>Lap</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Lap Section -->
+            <section class="laps-section">
+
+                <div class="section-heading">
+                    <div>
+                        <p>SESSION</p>
+                        <h2>Lap History</h2>
+                    </div>
+
+                    <span id="lapCount">0 LAPS</span>
+                </div>
+
+
+                <div id="lapList" class="lap-list">
+
+                    <div class="empty-state" id="emptyState">
+                        <div class="empty-icon">◷</div>
+                        <p>No laps recorded</p>
+                        <small>Start the timer and press Lap</small>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+            <span>CHRONOX</span>
+            <span>TIME • TRACK • RECORD</span>
+        </footer>
 
     </div>
+
 
     <script src="script.js"></script>
 
